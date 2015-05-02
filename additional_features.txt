@@ -1,0 +1,40 @@
+e-conomic_test additional feature list
+______________________________________
+
+Edit customer, project.
+
+Search for customers or projects.
+
+Recent customers, projects views. Multiple tabs.
+
+Manually add a period by specifying start stop time.
+
+Customer detail. Project detail. Attach other data.
+
+Mobile app. Local or connected via JSON web service.
+
+Add invoice debit entry to customer account ledger. 
+
+Option to save hourlyrate with period to decouple consumed period from future variations.
+
+Option to set per project rates.
+
+Customers just local or connected to accounting package and or contacts database.
+
+Option to set a default stop of period after say 8 hours. In case forgotten to stop.
+
+Option to give customer access to project and account ledgers.
+
+Checkboxes to choose only to invoice certain projects.
+
+Option to bulk send out billing to all customers all projects on due billing date.
+
+List running projects first.
+
+Set row limits, add column sorting, add pagination.
+
+Option to edit a period, edit/delete a bill.
+
+Option to add extra lines to invoice or send lines to external billing software.
+
+View issued invoices summary and detail.

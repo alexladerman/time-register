@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+tr.special {
+	cursor: pointer;
+}
+
+add_customer:after {
+	content: "Add Customer";
+}
+</style>
+<link href="bootstrap.min.css" rel="stylesheet">
+<script src="jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="bootstrap.min.js"></script>
+</head>
+<body>
+   <!-- Invoice Modal -->
+   <div class="modal fade" id="invoice_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <div class="row">
+                  <div class="col-md-6">
+                     <h2 class="modal-title" id="myModalLabel">
+                        Invoice<br> <br>
+                     </h2>
+                     <br>
+                     <h5 style="font-weight: bold">Some Customer Ltd.</h5>
+                     <h6>
+                        75 Someroad Rd. <br>P05TC04E Sometown<br>t: 555-654321<br>TaxID: 12345687
+                     </h6>
+
+                  </div>
+                  <div class="col-md-6">
+                     <h3 style="text-align: right; font-weight: bold;" class="text-info">Joe Bloggs Freelancing</h3>
+                     <h6 style="text-align: right">
+                        55 Somestreet St. <br>P05TC04E Somecity <br>jbloggsstudio@somedomain.com <br>t: 555-123456
+                     </h6>
+                     <br> <br>
+                     <h5 style="text-align: right">Invoice No: 324&nbsp;&nbsp;&nbsp;Date: 2014-06-08</h5>
+                  </div>
+               </div>
+            </div>
+            <div class="modal-body">
+               <table id="invoice_table"></table>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-primary" id="issue_invoice_btn">Issue</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Header -->
+   <header class="navbar navbar-static-top bs-docs-nav bg-primary" id="top" role="banner">
+      <div class="container-fluid">
+         <div class="navbar-header">
+            <a href="../" class="navbar-brand bg-primary">Project Time Tracking & Billing</a>
+         </div>
+      </div>
+   </header>
+   <div id="container" class="container-fluid">
+      <div class="row">
+         <div class="col-md-6">
+            <!-- New Customer Panel -->
+            <div class="panel panel-info">
+               <div class="panel-heading">
+                  <h3 class="panel-title">New Customer</h3>
+               </div>
+               <div class="panel-body">
+                  <form class="form-inline" id="new_customer_form" role="form">
+                     <div class="form-group">
+                        <label class="sr-only" for="input_new_customer_name">Name</label> <input type="text" class="form-control" id="input_new_customer_name" placeholder="Name">
+                     </div>
+                     <div class="form-group">
+                        <label class="sr-only" for="input_new_customer_email">Email address</label> <input type="email" class="form-control" id="input_new_customer_email" placeholder="Email">
+                     </div>
+                     <div class="form-group">
+                        <label class="sr-only" for="input_new_customer_hourly_rate">Hourly Rate</label><input type="number" min="0" max="9999" step="0.01" size="4" class="form-control" id="input_new_customer_hourly_rate" placeholder="Hourly Rate">
+                     </div>
+                     <button type="button" class="btn btn-primary" id="new_customer_btn">Add</button>
+                  </form>
+               </div>
+            </div>
+            <!-- Customers Panel -->
+            <div class="panel panel-info">
+               <div class="panel-heading">
+                  <h3 class="panel-title">Customers</h3>
+               </div>
+               <table id="master_table"></table>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <!-- New Project Panel -->
+            <div class="panel panel-warning hidden" id="detail_new_panel">
+               <div class="panel-heading">
+                  <h3 class="panel-title">New Project</h3>
+               </div>
+               <div class="panel-body">
+                  <form class="form-inline" id="new_project_form" role="form">
+                     <div class="form-group">
+                        <label class="sr-only" for="input_new_project_name">Project Name</label><input type="text" class="form-control" id="input_new_project_name" placeholder="Project Name">
+                     </div>
+                     <input type="hidden" id="input_new_project_customer_id">
+                     <button type="button" class="btn btn-primary" id="new_project_btn">Add</button>
+                  </form>
+               </div>
+            </div>
+            <!-- Projects Panel -->
+            <div class="panel panel-warning hidden" id="detail_panel">
+               <div class="panel-heading">
+                  <h3 class="panel-title">Projects</h3>
+               </div>
+               <table id="detail_table"></table>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script type="text/javascript" src="time-register.js"></script>
+</body>
+</html>
